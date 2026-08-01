@@ -1,0 +1,823 @@
+/* =========================================
+   1. VARIABEL & RESET DASAR
+   ========================================= */
+:root {
+    --warna-utama: #2563eb;      /* Biru teknologi */
+    --warna-utama-gelap: #1d4ed8; /* Biru untuk hover */
+    --warna-teks: #334155;       /* Abu-abu gelap untuk teks */
+    --warna-teks-terang: #64748b;/* Abu-abu untuk teks sekunder */
+    --warna-bg: #f8fafc;         /* Background sangat muda */
+    --warna-putih: #ffffff;
+    --bayangan: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: var(--warna-teks);
+    background-color: var(--warna-bg);
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* =========================================
+   2. NAVBAR (HEADER)
+   ========================================= */
+.navbar {
+    background-color: var(--warna-putih);
+    box-shadow: var(--bayangan);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+}
+
+.logo h2 {
+    font-size: 1.8rem;
+    color: var(--warna-teks);
+    font-weight: 800;
+}
+
+.logo span {
+    color: var(--warna-utama);
+}
+
+.nav-menu ul {
+    display: flex;
+    gap: 30px;
+}
+
+.nav-menu a {
+    font-weight: 600;
+    color: var(--warna-teks);
+    transition: color 0.3s;
+    position: relative;
+}
+
+.nav-menu a:hover, .nav-menu a.active {
+    color: var(--warna-utama);
+}
+
+.nav-menu a.active::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: var(--warna-utama);
+    border-radius: 2px;
+}
+
+/* Tombol Hamburger (Sembunyi di desktop) */
+.menu-toggle {
+    font-size: 1.8rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--warna-teks);
+    display: none; /* Disembunyikan di layar besar */
+}
+
+/* =========================================
+   3. HERO SECTION (BANNER)
+   ========================================= */
+.hero {
+    background: linear-gradient(135deg, var(--warna-utama) 0%, #1e3a8a 100%);
+    color: var(--warna-putih);
+    text-align: center;
+    padding: 100px 20px;
+}
+
+.hero-content h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    font-weight: 800;
+    line-height: 1.2;
+}
+
+.hero-content h1 span {
+    color: #fbbf24; /* Kuning emas untuk aksen */
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    max-width: 600px;
+    margin: 0 auto 30px;
+    opacity: 0.9;
+}
+
+.btn-primary {
+    display: inline-block;
+    background-color: #fbbf24;
+    color: #1e3a8a;
+    padding: 15px 35px;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 1.1rem;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+/* =========================================
+   4. SECTION UMUM (JUDUL)
+   ========================================= */
+section {
+    padding: 80px 0;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.2rem;
+    color: var(--warna-teks);
+    margin-bottom: 10px;
+    font-weight: 800;
+}
+
+.section-subtitle {
+    text-align: center;
+    color: var(--warna-teks-terang);
+    margin-bottom: 50px;
+    font-size: 1.1rem;
+}
+
+/* =========================================
+   5. KATALOG PRODUK (GRID)
+   ========================================= */
+.grid-produk {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.kartu-produk {
+    background: var(--warna-putih);
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: var(--bayangan);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.kartu-produk:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+}
+
+.kartu-produk img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover; /* Memastikan gambar tidak gepeng */
+}
+
+.info-produk {
+    padding: 20px;
+}
+
+.info-produk h3 {
+    font-size: 1.3rem;
+    margin-bottom: 8px;
+    color: var(--warna-teks);
+}
+
+.spek {
+    color: var(--warna-teks-terang);
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+}
+
+.harga {
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: var(--warna-utama);
+    margin-bottom: 20px;
+}
+
+.btn-beli {
+    display: block;
+    text-align: center;
+    background-color: var(--warna-utama);
+    color: var(--warna-putih);
+    padding: 12px;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: background-color 0.3s;
+}
+
+.btn-beli:hover {
+    background-color: var(--warna-utama-gelap);
+}
+
+/* =========================================
+   6. KENAPA KAMI (KEUNGGULAN)
+   ========================================= */
+.kenapa-kami {
+    background-color: var(--warna-putih);
+}
+
+.grid-keunggulan {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    text-align: center;
+}
+
+.item-keunggulan {
+    padding: 30px;
+    border-radius: 15px;
+    background: var(--warna-bg);
+    transition: transform 0.3s;
+}
+
+.item-keunggulan:hover {
+    transform: scale(1.05);
+}
+
+.item-keunggulan h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    color: var(--warna-teks);
+}
+
+/* =========================================
+   7. FOOTER
+   ========================================= */
+.footer {
+    background-color: #0f172a; /* Sangat gelap */
+    color: #cbd5e1;
+    padding: 60px 0 20px;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.footer-kolom h3, .footer-kolom h4 {
+    color: var(--warna-putih);
+    margin-bottom: 20px;
+}
+
+.footer-kolom ul li {
+    margin-bottom: 10px;
+}
+
+.footer-kolom a:hover {
+    color: var(--warna-utama);
+}
+
+.copyright {
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid #334155;
+    font-size: 0.9rem;
+    color: #64748b;
+}
+
+/* =========================================
+   8. RESPONSIVE (TAMPILAN HP / MOBILE)
+   ========================================= */
+@media (max-width: 768px) {
+    /* Tampilkan tombol hamburger */
+    .menu-toggle {
+        display: block;
+    }
+
+    /* Ubah menu jadi vertikal dan sembunyikan dulu */
+    .nav-menu {
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background: var(--warna-putih);
+        box-shadow: var(--bayangan);
+        flex-direction: column;
+        align-items: center;
+        padding: 20px 0;
+        display: none; /* Disembunyikan secara default */
+    }
+
+    /* Kelas active akan ditambahkan oleh JavaScript nanti */
+    .nav-menu.active {
+        display: flex; 
+    }
+
+    .nav-menu ul {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    /* Sesuaikan ukuran teks di HP */
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+    
+    .hero-content p {
+        font-size: 1rem;
+    }
+
+    .section-title {
+        font-size: 1.8rem;
+    }
+}
+
+/* =========================================
+   9. HERO KECIL (UNTUK HALAMAN KATALOG, TENTANG, KONTAK)
+   ========================================= */
+.hero-kecil {
+    background: linear-gradient(135deg, var(--warna-utama) 0%, #1e3a8a 100%);
+    color: var(--warna-putih);
+    text-align: center;
+    padding: 60px 20px;
+}
+
+.hero-kecil h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    font-weight: 800;
+}
+
+.hero-kecil p {
+    font-size: 1.1rem;
+    opacity: 0.9;
+}
+
+/* =========================================
+   10. FILTER BAR (KATALOG)
+   ========================================= */
+.katalog-section {
+    padding: 60px 0;
+}
+
+.filter-bar {
+    background: var(--warna-putih);
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: var(--bayangan);
+    margin-bottom: 40px;
+}
+
+.filter-bar h3 {
+    margin-bottom: 15px;
+    color: var(--warna-teks);
+    font-size: 1.2rem;
+}
+
+.filter-options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.filter-btn {
+    background: var(--warna-bg);
+    border: 2px solid transparent;
+    padding: 10px 20px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: 600;
+    color: var(--warna-teks);
+    transition: all 0.3s;
+}
+
+.filter-btn:hover {
+    background: var(--warna-utama);
+    color: var(--warna-putih);
+}
+
+.filter-btn.active {
+    background: var(--warna-utama);
+    color: var(--warna-putih);
+    border-color: var(--warna-utama-gelap);
+}
+
+/* Animasi saat produk difilter */
+.kartu-produk {
+    transition: opacity 0.3s, transform 0.3s;
+}
+
+.kartu-produk.hidden {
+    display: none;
+}
+
+/* Responsive filter di HP */
+@media (max-width: 768px) {
+    .filter-options {
+        flex-direction: column;
+    }
+    
+    .filter-btn {
+        width: 100%;
+    }
+}
+
+/* =========================================
+   11. HALAMAN TENTANG - CERITA KAMI
+   ========================================= */
+.tentang-section {
+    padding: 80px 0;
+}
+
+.tentang-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.tentang-teks h2 {
+    margin-bottom: 20px;
+}
+
+.tentang-teks p {
+    margin-bottom: 15px;
+    line-height: 1.8;
+    color: var(--warna-teks);
+}
+
+.tentang-gambar img {
+    width: 100%;
+    border-radius: 15px;
+    box-shadow: var(--bayangan);
+}
+
+/* =========================================
+   12. VISI & MISI
+   ========================================= */
+.visi-misi-section {
+    background: var(--warna-bg);
+    padding: 80px 0;
+}
+
+.visi-misi-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    margin-top: 40px;
+}
+
+.visi-card {
+    background: var(--warna-putih);
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: var(--bayangan);
+    text-align: center;
+}
+
+.visi-icon {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.visi-card h3 {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+    color: var(--warna-utama);
+}
+
+.visi-card p {
+    line-height: 1.8;
+    color: var(--warna-teks);
+}
+
+.visi-card ul {
+    text-align: left;
+    list-style: none;
+}
+
+.visi-card ul li {
+    padding: 10px 0;
+    padding-left: 25px;
+    position: relative;
+    color: var(--warna-teks);
+}
+
+.visi-card ul li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--warna-utama);
+    font-weight: bold;
+}
+
+/* =========================================
+   13. NILAI-NILAI KAMI
+   ========================================= */
+.nilai-section {
+    padding: 80px 0;
+}
+
+.nilai-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.nilai-card {
+    background: var(--warna-putih);
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: var(--bayangan);
+    transition: transform 0.3s;
+}
+
+.nilai-card:hover {
+    transform: translateY(-10px);
+}
+
+.nilai-icon {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+
+.nilai-card h3 {
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+    color: var(--warna-teks);
+}
+
+.nilai-card p {
+    color: var(--warna-teks-terang);
+    line-height: 1.6;
+}
+
+/* =========================================
+   14. STATISTIK
+   ========================================= */
+.statistik-section {
+    background: linear-gradient(135deg, var(--warna-utama) 0%, #1e3a8a 100%);
+    color: var(--warna-putih);
+    padding: 80px 0;
+}
+
+.statistik-section .section-title {
+    color: var(--warna-putih);
+}
+
+.statistik-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 40px;
+    margin-top: 40px;
+    text-align: center;
+}
+
+.statistik-item h3 {
+    font-size: 3rem;
+    font-weight: 800;
+    margin-bottom: 10px;
+    color: #fbbf24;
+}
+
+.statistik-item p {
+    font-size: 1.1rem;
+    opacity: 0.9;
+}
+
+/* =========================================
+   15. RESPONSIVE HALAMAN TENTANG
+   ========================================= */
+@media (max-width: 768px) {
+    .tentang-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    
+    .visi-misi-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .statistik-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+    
+    .statistik-item h3 {
+        font-size: 2rem;
+    }
+}
+
+/* =========================================
+   16. HALAMAN KONTAK - FORM & INFO
+   ========================================= */
+.kontak-section {
+    padding: 80px 0;
+}
+
+.kontak-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    margin-bottom: 60px;
+}
+
+/* Form Styling */
+.kontak-form-wrapper {
+    background: var(--warna-putih);
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: var(--bayangan);
+}
+
+.form-group {
+    margin-bottom: 25px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: var(--warna-teks);
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 2px solid #e2e8f0;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-family: inherit;
+    transition: border-color 0.3s;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--warna-utama);
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.btn-submit {
+    width: 100%;
+    background: var(--warna-utama);
+    color: var(--warna-putih);
+    padding: 15px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.btn-submit:hover {
+    background: var(--warna-utama-gelap);
+}
+
+/* Info Kontak Styling */
+.kontak-info-wrapper {
+    background: var(--warna-putih);
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: var(--bayangan);
+}
+
+.info-item {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 30px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.info-item:last-child {
+    border-bottom: none;
+}
+
+.info-icon {
+    font-size: 2rem;
+    flex-shrink: 0;
+}
+
+.info-detail h4 {
+    margin-bottom: 5px;
+    color: var(--warna-teks);
+    font-size: 1.1rem;
+}
+
+.info-detail p {
+    color: var(--warna-teks-terang);
+    line-height: 1.6;
+    margin: 0;
+}
+
+.link-wa {
+    display: inline-block;
+    margin-top: 8px;
+    color: var(--warna-utama);
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+.link-wa:hover {
+    color: var(--warna-utama-gelap);
+}
+
+/* Social Media */
+.social-media {
+    margin-top: 40px;
+}
+
+.social-media h4 {
+    margin-bottom: 15px;
+    color: var(--warna-teks);
+}
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+}
+
+.social-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    background: var(--warna-bg);
+    border-radius: 50%;
+    font-size: 1.5rem;
+    transition: all 0.3s;
+}
+
+.social-icon:hover {
+    background: var(--warna-utama);
+    transform: translateY(-5px);
+}
+
+/* Google Maps */
+.map-wrapper {
+    background: var(--warna-putih);
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: var(--bayangan);
+}
+
+.map-container {
+    margin-top: 30px;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+/* =========================================
+   17. RESPONSIVE HALAMAN KONTAK
+   ========================================= */
+@media (max-width: 768px) {
+    .kontak-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    
+    .kontak-form-wrapper,
+    .kontak-info-wrapper {
+        padding: 30px;
+    }
+    
+    .info-item {
+        flex-direction: column;
+        gap: 10px;
+    }
+}

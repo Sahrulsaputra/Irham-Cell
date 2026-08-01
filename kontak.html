@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kontak Kami - Irham Cell</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- ==================== HEADER & NAVIGASI ==================== -->
+    <header class="navbar">
+        <div class="container">
+            <div class="logo">
+                <h2>Irham <span>Cell</span></h2>
+            </div>
+            
+            <button class="menu-toggle" id="menu-toggle">
+                &#9776;
+            </button>
+
+            <nav class="nav-menu" id="nav-menu">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="katalog.html">Katalog</a></li>
+                    <li><a href="tentang.html">Tentang</a></li>
+                    <li><a href="kontak.html" class="active">Kontak</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- ==================== HERO SECTION KECIL ==================== -->
+    <section class="hero-kecil">
+        <div class="container">
+            <h1>Hubungi Kami</h1>
+            <p>Kami siap membantu Anda menemukan smartphone impian</p>
+        </div>
+    </section>
+
+    <!-- ==================== KONTEN UTAMA ==================== -->
+    <main>
+        <section class="kontak-section">
+            <div class="container">
+                <div class="kontak-grid">
+                    
+                    <!-- Kolom Kiri: Form Kontak -->
+                    <div class="kontak-form-wrapper">
+                        <h2 class="section-title" style="text-align: left;">Kirim Pesan</h2>
+                        <p style="margin-bottom: 30px; color: var(--warna-teks-terang);">
+                            Punya pertanyaan tentang produk atau ingin konsultasi? Isi form di bawah ini dan kami akan segera merespons.
+                        </p>
+                        
+                        <form id="form-kontak" onsubmit="return validasiForm(event)">
+                            <div class="form-group">
+                                <label for="nama">Nama Lengkap</label>
+                                <input type="text" id="nama" name="nama" placeholder="Masukkan nama Anda" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="email">Alamat Email</label>
+                                <input type="email" id="email" name="email" placeholder="contoh@email.com" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="subjek">Subjek</label>
+                                <select id="subjek" name="subjek" required>
+                                    <option value="">Pilih subjek</option>
+                                    <option value="tanya-produk">Tanya Produk</option>
+                                    <option value="konsultasi">Konsultasi HP</option>
+                                    <option value="garansi">Klaim Garansi</option>
+                                    <option value="lainnya">Lainnya</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="pesan">Pesan</label>
+                                <textarea id="pesan" name="pesan" rows="5" placeholder="Tulis pesan Anda di sini..." required></textarea>
+                            </div>
+                            
+                            <button type="submit" class="btn-submit">Kirim Pesan</button>
+                        </form>
+                    </div>
+
+                    <!-- Kolom Kanan: Info Kontak -->
+                    <div class="kontak-info-wrapper">
+                        <h2 class="section-title" style="text-align: left;">Informasi Kontak</h2>
+                        
+                        <div class="info-item">
+                            <div class="info-icon">📍</div>
+                            <div class="info-detail">
+                                <h4>Alamat Toko</h4>
+                                <p>Jl. Bigjen Katamso<br>Kota Kendari,</p>
+                            </div>
+                        </div>
+                        
+                        <div class="info-item">
+                            <div class="info-icon">📱</div>
+                            <div class="info-detail">
+                                <h4>WhatsApp</h4>
+                                <p>0812-3456-7890</p>
+                                <a href="https://wa.me/6281234567890" target="_blank" class="link-wa">Chat Sekarang →</a>
+                            </div>
+                        </div>
+                        
+                        <div class="info-item">
+                            <div class="info-icon">✉️</div>
+                            <div class="info-detail">
+                                <h4>Email</h4>
+                                <p>info@irhamcell.com</p>
+                            </div>
+                        </div>
+                        
+                        <div class="info-item">
+                            <div class="info-icon">🕐</div>
+                            <div class="info-detail">
+                                <h4>Jam Operasional</h4>
+                                <p>Senin - Sabtu: 09.00 - 21.00<br>Minggu: 10.00 - 18.00</p>
+                            </div>
+                        </div>
+
+                        <!-- Social Media -->
+                        <div class="social-media">
+                            <div class="social-icons">
+                                <a href="#" class="social-icon" title="Instagram">
+                                    <img src="images/ig.jpeg" alt="Instagram">
+                                </a>
+                                <a href="#" class="social-icon" title="Facebook">
+                                    <img src="images/fb.png" alt="Facebook">
+                                </a>
+                                <a href="#" class="social-icon" title="TikTok">
+                                    <img src="images/tik_tok.png" alt="TikTok">
+                                </a>
+                                <a href="#" class="social-icon" title="YouTube">
+                                    <img src="images/youtube.png" alt="YouTube">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Google Maps (Opsional) -->
+                <!-- Ganti bagian map-wrapper dengan ini -->
+                <div class="map-wrapper">
+                    <h2 class="section-title">Lokasi Kami</h2>
+                    <div style="text-align: center; padding: 40px;">
+                        <p style="margin-bottom: 20px; color: var(--warna-teks-terang);">
+                            Klik tombol di bawah untuk melihat lokasi kami di Google Maps
+                        </p>
+                        <a href="https://www.google.com/maps/place/4°03'16.6%22S+122°28'57.1%22E/@-4.054227,122.4814832,18z" 
+                        target="_blank" 
+                        class="btn-primary"
+                        style="display: inline-block; padding: 15px 30px;">
+                            📍 Buka di Google Maps
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ==================== FOOTER ==================== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-kolom">
+                    <h3>Irham Cell</h3>
+                    <p>Solusi gadget terpercaya untuk mahasiswa dan masyarakat umum.</p>
+                </div>
+                <div class="footer-kolom">
+                    <h4>Menu</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="katalog.html">Katalog</a></li>
+                        <li><a href="tentang.html">Tentang</a></li>
+                    </ul>
+                </div>
+                <div class="footer-kolom">
+                    <h4>Kontak</h4>
+                    <p>📍 Jl. Bigjen Katamso, Kota Kendari</p>
+                    <p>📱 0812-3456-7890</p>
+                    <p>✉️ info@irhamcell.com</p>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2026 Irham Cell. Tugas Kuliah Pemrograman Web.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+
+</body>
+</html>

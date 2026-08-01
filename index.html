@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Irham Cell - Pusat HP Baru & Bekas Berkualitas</title>
+    
+    <!-- Menghubungkan file CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- ==================== HEADER & NAVIGASI ==================== -->
+    <header class="navbar">
+        <div class="container">
+            <div class="logo">
+                <h2>Irham <span>Cell</span></h2>
+            </div>
+            
+            <!-- Tombol Hamburger untuk tampilan HP (akan diaktifkan dengan JS nanti) -->
+            <button class="menu-toggle" id="menu-toggle">
+                &#9776; <!-- Simbol garis tiga (hamburger icon) -->
+            </button>
+
+            <nav class="nav-menu" id="nav-menu">
+                <ul>
+                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="katalog.html">Katalog</a></li>
+                    <li><a href="tentang.html">Tentang</a></li>
+                    <li><a href="kontak.html">Kontak</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- ==================== HERO SECTION (BANNER UTAMA) ==================== -->
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Temukan HP Impianmu di <span>Irham Cell</span></h1>
+                <p>Pusat jual beli smartphone baru dan bekas berkualitas dengan harga bersahabat. Garansi resmi dan transaksi aman!</p>
+                <a href="katalog.html" class="btn-primary">Lihat Katalog</a>
+            </div>
+        </section>
+
+        <!-- ==================== PRODUK UNGGULAN ==================== -->
+        <section class="produk-unggulan">
+            <div class="container">
+                <h2 class="section-title">Produk Unggulan</h2>
+                <p class="section-subtitle">Pilihan smartphone terbaik dengan harga spesial minggu ini</p>
+                
+                <div class="grid-produk">
+                    <!-- Produk 1 -->
+                    <div class="kartu-produk">
+                        <img src="images/samsung-a54.jpeg" alt="Samsung Galaxy A54">
+                        <div class="info-produk">
+                            <h3>Samsung Galaxy A54</h3>
+                            <p class="spek">RAM 8GB | 256GB | 5000mAh</p>
+                            <p class="harga">Rp 4.500.000</p>
+                            <a href="kontak.html" class="btn-beli">Beli Sekarang</a>
+                        </div>
+                    </div>
+
+                    <!-- Produk 2 -->
+                    <div class="kartu-produk">
+                        <img src="images/iphone-13.jpeg" alt="iPhone 13 Second">
+                        <div class="info-produk">
+                            <h3>iPhone 13 (Second)</h3>
+                            <p class="spek">RAM 4GB | 128GB | iHealth 92%</p>
+                            <p class="harga">Rp 7.200.000</p>
+                            <a href="kontak.html" class="btn-beli">Beli Sekarang</a>
+                        </div>
+                    </div>
+
+                    <!-- Produk 3 -->
+                    <div class="kartu-produk">
+                        <img src="images/xiaomi-13t.jpeg" alt="Xiaomi 13T">
+                        <div class="info-produk">
+                            <h3>Xiaomi 13T</h3>
+                            <p class="spek">RAM 12GB | 256GB | 144Hz AMOLED</p>
+                            <p class="harga">Rp 5.100.000</p>
+                            <a href="kontak.html" class="btn-beli">Beli Sekarang</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== KENAPA PILIH KAMI ==================== -->
+        <section class="kenapa-kami">
+            <div class="container">
+                <h2 class="section-title">Kenapa Belanja di Irham Cell?</h2>
+                <div class="grid-keunggulan">
+                    <div class="item-keunggulan">
+                        <h3>🛡️ 100% Original</h3>
+                        <p>Semua unit yang kami jual dijamin asli dan bukan rekondisan.</p>
+                    </div>
+                    <div class="item-keunggulan">
+                        <h3>💰 Harga Bersaing</h3>
+                        <p>Dapatkan harga terbaik untuk spek yang kamu inginkan.</p>
+                    </div>
+                    <div class="item-keunggulan">
+                        <h3>🤝 Garansi Personal</h3>
+                        <p>Garansi mesin 7 hari untuk kenyamanan transaksi Anda.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ==================== FOOTER ==================== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-kolom">
+                    <h3>Irham Cell</h3>
+                    <p>Solusi gadget terpercaya untuk mahasiswa dan masyarakat umum.</p>
+                </div>
+                <div class="footer-kolom">
+                    <h4>Menu</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="katalog.html">Katalog</a></li>
+                        <li><a href="tentang.html">Tentang</a></li>
+                    </ul>
+                </div>
+                <div class="footer-kolom">
+                    <h4>Kontak</h4>
+                    <p>📍 Jl. Bigjen Katamso, Kota Kendari</p>
+                    <p>📱 0812-3456-7890</p>
+                    <p>✉️ info@irhamcell.com</p>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2026 Irham Cell. Tugas Kuliah Pemrograman Web.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Menghubungkan file JavaScript (ditaruh di paling bawah agar loading lebih cepat) -->
+    <script src="js/script.js"></script>
+
+</body>
+</html>
